@@ -1,0 +1,23 @@
+stages:
+  - test1
+  - test2
+
+default:
+  before_script:
+    - DT="222222222"
+    - export DT
+
+acc1:
+  stage: test1
+  tags:
+    - "runner2"
+  script:
+    - echo "Do your build here"
+  
+acc2:
+  stage: test2
+  tags:
+    - "runner2"
+  script:
+    - DT="111111"
+    - echo $DT
